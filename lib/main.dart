@@ -1,17 +1,12 @@
-import 'dart:convert';
+import 'dart:math' as math;
+import 'dart:collection';
 
-void main() {
-  var jsonString = '''
-  [
-    {"score":40},
-    {"score":80}
-  ]
-  ''';
+void main(){
+  var rand = math.Random();
+  HashSet<int> lotteryNumber = HashSet();
 
-  var scores = jsonDecode(jsonString);
-  print(scores is List);
-  var firstScore = scores[0];
-  print(firstScore is Map);
-  print(firstScore['score'] == 40);
+  while (lotteryNumber.length < 6){
+    lotteryNumber.add(rand.nextInt(45));
+  }
+  print(lotteryNumber);
 }
-
